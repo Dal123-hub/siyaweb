@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="admincss/admin.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body style="background-color: #508bfc;">
+<section class="vh-100" >
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 ">
+
+            <h3>Admin Panel</h3>
+			<ul class="list-group">
+			<li  class="list-group-item"><a href="" th:href="@{/register}" class="list-group-item-action">User Register</a></li>
+			<li  class="list-group-item"><a href="" th:href="@{/dispuser}" class="list-group-item-action">Display User</a></li>
+			<li  class="list-group-item"><a href="" th:href="@{/imageupload}" class="list-group-item-action">Photo Upload</a></li>
+			<li  class="list-group-item"><a href="" th:href="@{/newspage}" class="list-group-item-action">News Upload</a></li>
+			<li  class="list-group-item "> <a href="" th:href="@{/register}" class="list-group-item-action">Display Comments</a></li>
+			<li  class="list-group-item "> <a href="" th:href="@{/register}" class="list-group-item-action">Logout</a></li>
+			</ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

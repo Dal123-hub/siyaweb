@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Image Upload</title>
+<link href="admincss/admin.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body style="background-color: #508bfc;">
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <h3 class="mb-1">Image Upload</h3>
+            <hr>
+            <p class="mb-4" th:text="${msg}"></p>
+			<form class="user" method="post" action="upload" enctype="multipart/form-data">
+										<div class="form-group">
+											<div class="custom-file">
+												<input type="file" name = "file" id="myFile"  >
+
+											</div>
+
+										</div>
+										<button
+											class="btn btn-primary btn-user btn-block"> Upload Image
+										</button>
+									<hr>
+									 <a href="menu" class="btn btn-primary btn-user btn-block" style="text-decoration:none;color:Black;">Back</a>
+
+									</form>
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

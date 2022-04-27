@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="admincss/admin.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://www.google.com/recaptcha/api.js"></script>
+</head>
+<body style="background-color: #508bfc;">
+	<section class="vh-100">
+		<div class="container py-5 h-100">
+			<div
+				class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+					<div class="card shadow-2-strong" style="border-radius: 1rem;">
+						<div class="card-body p-5 ">
+
+
+							<h3 class="mb-3"><img src="/icon/login3.jpg" width="80" height="80">&nbsp;Please login</h3>
+
+							<div class="mb-3" th:if="${message != null}">
+								<span class="alert alert-danger" th:utext="${message}"></span>
+							</div>
+							<div class="mb-5 alert alert-sucess" th:if="${sucess != null}" th:text="${sucess}"></div>
+							<form th:action="@{/menupage}" method="post"
+								th:object="${userInfo}">
+								<div class="form-outline mb-4">
+
+									<input type="text" id="name"
+										class="form-control form-control-lg"
+										th:classappend="${#fields.hasErrors('uname') ? 'is-invalid':''}"
+										th:field="*{uname}" placeholder="UserName" />
+
+									<div class="invalid-feedback alert alert-danger"
+										th:each="e : ${#fields.errors('uname')}" th:text="${e}">
+
+									</div>
+								</div>
+
+								<div class="form-outline mb-4">
+
+
+									<input type="password" id="pass"
+										class="form-control form-control-lg"
+										th:classappend="${#fields.hasErrors('upass') ? 'is-invalid':''}"
+										th:field="*{upass}" placeholder="Password" />
+
+									<div class="invalid-feedback alert alert-danger"
+										th:each="e : ${#fields.errors('upass')}" th:text="${e}">
+
+									</div>
+
+
+								</div>
+
+								<div class="form-group g-recaptcha"
+									data-sitekey="6Ld6KDgcAAAAANApdRxNiugkDUgm1hyImkYPz4TP">
+								</div>
+
+								<button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+
+
+
+							</form>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>
